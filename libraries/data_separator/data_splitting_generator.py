@@ -4,7 +4,8 @@ import pandas
 
 def data_partition_generator(data: pandas.DataFrame, cols):
     """The purpose of this generator is to partition the data with respect to the columns specified by the cols
-    parameter.
+    parameter. 28/03/2022 For some reason when I initialized all the outputs with a tuple constructor, I found that I
+    needed to remove an index column for the unit test.
 
     :param data: The data which you want to partition.
     :param cols: The columns of the data you want to partition by.
