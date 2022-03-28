@@ -10,7 +10,7 @@ def speed_test():
     """Test the speeds of the generator for the partitions against a method for trying the loc function using all the
     different combinations of Show Number and Value in the Jeopardy dataset. Which I got from this website:
     https://domohelp.domo.com/hc/en-us/articles/360043931814-Fun-Sample-DataSets, the file is too large for me to
-    reasonably upload to GitHub.
+    reasonably upload to GitHub (216930 rows and 7 columns).
 
     :return: None
     """
