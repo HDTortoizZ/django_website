@@ -7,7 +7,17 @@ from libraries.data_separator.data_splitting_generator import data_partition_gen
 
 
 class DataPartitioner:
+    """
+    This class should partition the data given based on the columns chosen. This will be useful in a web application
+    should we want to display each partition on pages dependent on the selection the user provides.
+    """
     def __init__(self, filename, partition_columns, data):
+        """Initialize the class attributes.
+
+        :param filename: The name of the file that the data was read from.
+        :param partition_columns: The columns that the user wants to partition the data by.
+        :param data: The data to partition.
+        """
         if type(filename) == str:
             self._filename = filename
         else:
@@ -35,12 +45,22 @@ class DataPartitioner:
         return self._data
 
     def get_partition(self, column_values):
+        """Retrieve the partition corresponding to the column values passed.
+
+        :param column_values: The column values for the partition required.
+        :return: The partition corresponding to the column values passed.
+        """
         for partition in self._partitioned_data:
             if partition.column_values == column_values:
                 return partition.partition_of_data
         raise KeyError(f"Data Partitioned with {column_values} not found in this instance of DataPartitioner.")
 
     def partition_data(self):
+        """Partition the data stored in the class by the column names passed to the constructor using an instance of the
+        data_partition_generator.
+
+        :return: A list of DataPartition objects.
+        """
         data = self.data
         columns = self.partition_columns
         partition_generator = data_partition_generator(data, columns)
@@ -57,7 +77,16 @@ class DataPartitioner:
 
 
 class DataPartition:
+    """
+    This class will store a singular partition so it is easier to find within the DataPartitioner class.
+    """
     def __init__(self, columns, column_values, partition_of_data):
+        """Initialize the DataPartitioner.
+
+        :param columns: The columns that the data was partitioned by.
+        :param column_values: The values of the partition columns for this partition of data.
+        :param partition_of_data: The partition of data based with the column values.
+        """
         self._columns = columns
         self._column_values = column_values
         self._partition_of_data = partition_of_data
