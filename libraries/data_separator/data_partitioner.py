@@ -73,11 +73,3 @@ class DataPartition:
     @property
     def partition_of_data(self):
         return self._partition_of_data
-
-
-if __name__ == '__main__':
-    df = pandas.read_csv(os.path.join(Path(__file__).resolve().parent.parent.parent,
-                                      'media/testing_files/test_separator_generator.csv'))
-    data_partitioner = DataPartitioner('test_separator_generator.csv', ['col1', 'col2'], df)
-    print(data_partitioner.get_partition([3, 4]))
-
