@@ -29,3 +29,10 @@ body {
 a.first-nav {
     margin-left: 20px;
 }
+
+.main-body {
+    background-color: aqua;
+    width: 40vw;
+    height: 25vh;
+    border-radius: 5px;
+}

@@ -8,11 +8,13 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
-<nav>
-    <img src="{% static 'images/websitelogo.png' %}" alt="web logo">
-    <a class="first-nav" href="{% url 'home' %}">Home</a>
-</nav>
-{% block context %}
-{% endblock %}
+    <nav>
+        <img src="{% static 'images/websitelogo.png' %}" alt="web logo">
+        <a class="first-nav" href="{% url 'home' %}">Home</a>
+    </nav>
+    <div class="main-body">
+    {% block context %}
+    {% endblock %}
+    </div>
 </body>
 </html>
