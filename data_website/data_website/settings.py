@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'data_partitions',
     'welcome',
     'django.contrib.admin',
     'django.contrib.auth',

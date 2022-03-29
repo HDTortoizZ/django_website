@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from welcome.views import welcome
+from data_partitions.views import CreatePartitionsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome, name='home'),
+    path('partitions', CreatePartitionsView.as_view(), name='partitions_home')
 ]
