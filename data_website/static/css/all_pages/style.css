@@ -32,7 +32,7 @@ a.first-nav {
 
 .main-body {
     background-color: aqua;
-    width: 40vw;
-    height: 25vh;
+    width: 100vw;
+    height: 100vh;
     border-radius: 5px;
 }
