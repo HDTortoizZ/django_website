@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from welcome.views import welcome
 from data_partitions.views import CreatePartitionsView
+from uploads.views import UploadView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome, name='home'),
-    path('partitions', CreatePartitionsView.as_view(), name='partitions_home')
+    path('partitions', CreatePartitionsView.as_view(), name='partitions_home'),
+    path('upload', UploadView.as_view(), name='upload'),
 ]
